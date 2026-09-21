@@ -5,6 +5,8 @@
 **Members:** Ramalingham Seyon (MS26912516) and Kekulawala Vidanalage Dhammika Kekulawala (MS26902784)
 **Status of this document:** proposal for discussion. The topic is NOT final until both members agree (see section 10).
 
+___
+
 ---
 
 ## 1. What the assignment requires (from `Optimization_Assignment.pdf`)
