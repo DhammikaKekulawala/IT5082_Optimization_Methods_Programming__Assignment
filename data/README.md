@@ -12,13 +12,10 @@ Nurse Rostering Benchmark Instances 1-24, Tim Curtois (University of Nottingham)
 Checked live on 2026-09-24: no registration needed. Please cite the benchmark page and the reference it lists
 (doi 10.1016/j.ejor.2014.01.039) in the report.
 
-## Reproduce
+## Get the data
 
-```
-python src/download_instances.py
-```
-
-This fills `data/raw/` (not committed, see `.gitignore`) with `Instance1.txt` ... `Instance24.txt` and the XML versions.
+Download `instances1_24.zip` from the link above and extract it into `data/raw/`
+(not committed, see `.gitignore`) so that it contains `Instance1.txt` ... `Instance24.txt` and the XML versions.
 
 ## `best_known.csv`
 
