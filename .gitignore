@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Downloaded benchmark instances (reproduce with: python src/download_instances.py)
+data/raw/
+
+# Solver / run artefacts
+*.lp
+*.mps
+*.sol
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
