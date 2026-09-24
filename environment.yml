@@ -1,0 +1,16 @@
+name: seyon
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - numpy
+  - pandas
+  - matplotlib
+  - scipy
+  - jupyter
+  - pip
+  - pip:
+      - pulp   # ILP modelling + bundled CBC solver (exact method)
+      - deap   # evolutionary computation (Genetic Algorithm)
+      # ortools (CP-SAT) is an optional second exact solver. It pins protobuf, so add it
+      # only if that does not conflict with other packages in your environment.
