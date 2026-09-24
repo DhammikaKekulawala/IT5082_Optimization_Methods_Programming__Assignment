@@ -43,8 +43,9 @@ All code in this project runs in the conda environment **`seyon`** (Python 3.10)
 ```
 conda activate seyon
 pip install pulp deap            # only the packages this project needs
-python src/download_instances.py # fills data/raw/ with the 24 instances
 ```
+
+Download the instances (see [data/README.md](data/README.md)) into `data/raw/`.
 
 `ortools` (CP-SAT) is an optional second exact solver; it is not installed by default because it pins `protobuf`.
 
@@ -52,8 +53,7 @@ python src/download_instances.py # fills data/raw/ with the 24 instances
 
 ```
 data/        benchmark description, best-known table (best_known.csv); raw instances are downloaded, not committed
-src/         instance parser, exact ILP, genetic algorithm, experiment runner
-*.ipynb      experiment and analysis notebooks, kept in the repository root
+*.ipynb      code and analysis notebooks (instance parser, ILP, genetic algorithm, experiments), kept in the repository root
 results/     benchmark outputs and plots
 report/      technical PDF report sources
 ```
