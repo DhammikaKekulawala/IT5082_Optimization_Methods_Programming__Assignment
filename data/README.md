@@ -15,7 +15,6 @@ Checked live on 2026-09-24: no registration needed. Please cite the benchmark pa
 ## Reproduce
 
 ```
-conda activate seyon
 python src/download_instances.py
 ```
 
