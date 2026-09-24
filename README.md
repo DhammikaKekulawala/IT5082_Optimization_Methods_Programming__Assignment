@@ -1,9 +1,8 @@
 # IT5082 Optimization Methods — Programming Assignment
 
-Exact vs. metaheuristic optimization for a real-world decision problem — an exact
-method (ILP / B&B / DP) benchmarked against a heuristic / metaheuristic
-(Genetic Algorithm, Simulated Annealing, …) on solution quality, runtime, and
-scalability.
+**Nurse / Staff Rostering:** an exact method (Integer Linear Programming, Branch & Bound) benchmarked against a
+metaheuristic (Genetic Algorithm) on real benchmark instances, comparing solution quality, runtime, scalability and
+feasibility.
 
 **Module:** IT5082 – Optimization Methods · MSc in Artificial Intelligence, SLIIT
 **Assessment:** Group Programming Assignment (2 members) · 40 marks
@@ -17,27 +16,62 @@ scalability.
 
 See [Members.md](Members.md) for the full group information.
 
-## Scope
+## Problem
 
-- Select a realistic, non-trivial decision problem and formulate it mathematically
-  (decision variables, objective function, constraints).
-- Implement **two** solution approaches:
-  1. **Exact method** — guarantees optimality (ILP via PuLP / Pyomo / OR-Tools,
-     Dynamic Programming, or Branch & Bound).
-  2. **Heuristic / metaheuristic** — scalable approximate search (Genetic Algorithm,
-     Simulated Annealing, Tabu Search, Ant Colony Optimization).
-- Benchmark both across scaling instance sizes (N = 10, 25, 50, 100, 250) on
-  objective value, optimality gap %, runtime, memory, and feasibility.
+A hospital ward has a set of nurses and a planning period of 2 to 52 weeks. Each day has one or more shift types with a
+required number of nurses. We assign nurses to shifts so that every hard labour rule holds (one shift per day, forbidden
+shift sequences, working-time limits, consecutive-work and rest limits, weekend limits, fixed days off) while minimising
+the weighted penalty of unmet staffing cover and unmet nurse shift requests. The problem is NP-hard.
+
+## Methods
+
+1. **Exact:** binary ILP solved by Branch & Bound (PuLP with the bundled CBC solver).
+2. **Metaheuristic:** Genetic Algorithm (DEAP) with a full roster as the chromosome.
+
+Both minimise the same penalty function, defined by the benchmark, so results are directly comparable.
+
+## Dataset
+
+Nurse Rostering Benchmark Instances 1-24 (Tim Curtois, University of Nottingham),
+<https://www.schedulingbenchmarks.org/nrp/>. Real instances from 8 to 150 nurses and 2 to 52 weeks, each with a
+best-known lower bound and solution. See [data/README.md](data/README.md).
+
+## Setup
+
+All code in this project runs in the conda environment **`seyon`** (Python 3.10).
+
+```
+conda activate seyon
+pip install pulp deap            # or: conda env update -f environment.yml
+python src/download_instances.py # fills data/raw/ with the 24 instances
+```
+
+`ortools` (CP-SAT) is an optional second exact solver; it is not installed by default because it pins `protobuf`.
 
 ## Repository layout
 
 ```
-data/        problem instances / datasets
-src/         exact and metaheuristic implementations
+data/        benchmark description, best-known table (best_known.csv); raw instances are downloaded, not committed
+src/         instance parser, exact ILP, genetic algorithm, experiment runner
 notebooks/   experiments and analysis
 results/     benchmark outputs and plots
 report/      technical PDF report sources
 ```
+
+## Workflow
+
+- `main` is the shared branch. Seyon works on branch **`seyon`**; changes reach `main` through the shared repository.
+- Small, meaningful commits from both members (for example "add instance parser", "add ILP model", "add GA").
+
+## Status
+
+- [x] Topic chosen, plan written (`Rostering_Project_Plan.docx`)
+- [x] Repository scaffold, environment, data download script
+- [ ] Instance parser
+- [ ] ILP model, verified against best-known solutions
+- [ ] Genetic Algorithm
+- [ ] Experiments, graphs, comparison
+- [ ] Report, code appendix, video, submission zip
 
 ## Deliverables
 
@@ -45,5 +79,4 @@ report/      technical PDF report sources
 - 15-minute YouTube demonstration video
 - Technical PDF report (IEEE / academic structure)
 - Plain-text code appendix
-- `Optimization-assignment.zip` bundling `members.txt`, `submission.txt`, report,
-  and code appendix
+- `Optimization-assignment.zip` bundling `members.txt`, `submission.txt`, report, and code appendix
