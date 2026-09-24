@@ -53,7 +53,7 @@ python src/download_instances.py # fills data/raw/ with the 24 instances
 ```
 data/        benchmark description, best-known table (best_known.csv); raw instances are downloaded, not committed
 src/         instance parser, exact ILP, genetic algorithm, experiment runner
-notebooks/   experiments and analysis
+*.ipynb      experiment and analysis notebooks, kept in the repository root
 results/     benchmark outputs and plots
 report/      technical PDF report sources
 ```
