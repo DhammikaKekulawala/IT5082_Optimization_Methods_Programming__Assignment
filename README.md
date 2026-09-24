@@ -42,7 +42,7 @@ All code in this project runs in the conda environment **`seyon`** (Python 3.10)
 
 ```
 conda activate seyon
-pip install pulp deap            # or: conda env update -f environment.yml
+pip install pulp deap            # only the packages this project needs
 python src/download_instances.py # fills data/raw/ with the 24 instances
 ```
 
