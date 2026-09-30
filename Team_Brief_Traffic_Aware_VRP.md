@@ -3,7 +3,7 @@
 **Module:** IT5082 Optimization Methods, MSc in Artificial Intelligence, SLIIT
 **Assessment:** Group Programming Assignment, 2 members, 40 marks
 **Members:** Ramalingham Seyon (MS26912516) and Kekulawala Vidanalage Dhammika Kekulawala (MS26902784)
-**Status of this document:** proposal for discussion. The topic is NOT final until both members agree (see section 10).
+**Status of this document:** proposal for discussion. The topic is NOT final until both members agree (see section 9).
 
 _____
 
@@ -147,7 +147,7 @@ Travel time that changes continuously with the hour is hard to put in a linear m
 | 25 locations | 3,125 | $0 | about $31 |
 | 50 locations | 12,500 | about $75 | about $125 |
 
-**Safety steps:** set a budget alert and a daily quota cap in the Cloud console before any calls. Who enters a card, if anyone, is an open decision (section 10).
+**Safety steps:** set a budget alert and a daily quota cap in the Cloud console before any calls. Who enters a card, if anyone, is an open decision (section 9).
 
 ---
 
@@ -181,26 +181,7 @@ Packages still to install: OR-Tools, PuLP (or Pyomo), DEAP, folium, OSMnx.
 
 ---
 
-## 9. Suggested phases and split of work (proposal, adjust as you like)
-
-The rubric grades **individual contribution** and a **viva**, so both members should be able to explain every part. Suggested split, with cross-review of each other's work:
-
-| Phase | Work | Suggested lead |
-|---|---|---|
-| 0 | Agree topic, deadline, data source, API card decision | Both |
-| 1 | Data pipeline: benchmarks, Colombo instance, traffic multipliers | Member A |
-| 2 | Exact MILP model, validation on benchmarks, gap and bound reporting | Member A |
-| 3 | Simulated Annealing and Genetic Algorithm implementations | Member B |
-| 4 | Experiment harness, scaling runs, plots | Both |
-| 5 | Streamlit demo (optional) | Member B |
-| 6 | PDF report, code appendix, Turnitin check | Both |
-| 7 | 15-minute video, `submission.txt`, `members.txt`, final zip | Both |
-
-Who is A and who is B is for you two to decide. Please record each member's actual contribution in the report.
-
----
-
-## 10. Open decisions (need your input)
+## 9. Open decisions (need your input)
 
 1. **Topic:** agree on traffic-aware CVRPTW in Colombo, or choose an alternative (for example ambulance-station location or a cardinality-constrained portfolio).
 2. **Deadline:** not stated on the brief; confirm on CourseWeb.
@@ -208,8 +189,7 @@ Who is A and who is B is for you two to decide. Please record each member's actu
 4. **Traffic handling in the exact model:** fixed scenarios (proposed) versus something more complex.
 5. **Exact solver:** CBC via PuLP, Pyomo, or SciPy/HiGHS.
 6. **Which heuristics:** Simulated Annealing, Genetic Algorithm, or both.
-7. **Work split** and who leads which phase.
-8. **Repository visibility** and where the dataset and video links will be hosted.
+7. **Repository visibility** and where the dataset and video links will be hosted.
 
 ---
 

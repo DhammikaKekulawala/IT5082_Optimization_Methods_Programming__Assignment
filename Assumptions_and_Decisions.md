@@ -68,13 +68,12 @@ Companion to `Team_Brief_Traffic_Aware_VRP.md`. This lists every assumption made
 | # | Assumption | Status | If wrong |
 |---|---|---|---|
 | F1 | The partner (Kekulawala) agrees to the topic and plan | Assumed, not asked | Revisit the topic choice |
-| F2 | Work is split into Member A (data pipeline, exact MILP) and Member B (SA, GA, optional UI), with cross-review | Assumed, roles not assigned | Split however you agree; record real contributions in the report |
-| F3 | The existing repo `Assignment/GIT` (2 commits, `README.md` and `Members.md`) will be the submission repo | Confirmed exists locally; not confirmed that it is pushed to GitHub | Create or push the remote repo |
-| F4 | The report must stay under 20% Turnitin similarity | Confirmed (sheet) | Write in our own words, cite sources |
+| F2 | The existing repo `Assignment/GIT` (2 commits, `README.md` and `Members.md`) will be the submission repo | Confirmed exists locally; not confirmed that it is pushed to GitHub | Create or push the remote repo |
+| F3 | The report must stay under 20% Turnitin similarity | Confirmed (sheet) | Write in our own words, cite sources |
 
 ---
 
 ## Confirm next
 1. **B1** (topic) and **B6** (how traffic enters the exact model).
 2. **A3** (deadline), **E3** and **E4** (Google costs and card), and whether to use Google at all (D6).
-3. **F1** and **F2** (partner agreement and work split).
+3. **F1** (partner agreement).
