@@ -168,3 +168,33 @@ def load_instance(path: str) -> Instance:
         off_requests=off_requests,
         cover=cover,
     )
+
+
+# ---------------------------------------------------------------------------
+# Roster format (agreed convention, used by every notebook in this repo):
+#   a numpy int array of shape (n_nurses, n_days), in nurse_ids / day order,
+#   where 0 = day off and k = the k-th shift in Instance.shift_ids (1-based).
+#
+# Independent checker interface (implemented separately from this file, from
+# the rule text alone, so the ILP and the GA are graded by the same referee
+# that neither of them wrote):
+#
+#   def evaluate(roster: np.ndarray, inst: Instance) -> dict:
+#       """Score one roster against one instance.
+#
+#       Returns
+#       -------
+#       dict with exactly these keys:
+#         "penalty"  : float  -- the soft objective (cover under/over + unmet
+#                                 shift-on/off requests), same units as the
+#                                 ILP objective.
+#         "hard"     : dict[str, float] -- one entry per hard rule (H1..H9),
+#                                 the violation amount for that rule (0 if
+#                                 satisfied).
+#         "feasible" : bool   -- True iff every value in "hard" is 0.
+#       """
+#
+# Hand-checks on Instance 1 that evaluate() must reproduce exactly:
+#   all nurses off every day            -> penalty 7137
+#   nurse A works the shift on days 2,3 -> penalty 6933
+# ---------------------------------------------------------------------------
