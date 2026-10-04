@@ -1,0 +1,7 @@
+instance,n_nurses,n_days,n_shift_types,n_binaries,objective,status,sol_status,time_s,best_known,gap_bks_abs,gap_bks_pct
+Instance1,8,14,1,112,607.0,proven optimal,1,1.02,607,0.0,0.0
+Instance2,14,14,2,392,828.0,proven optimal,1,1.67,828,0.0,0.0
+Instance3,20,14,3,840,1007.0,feasible (time limit reached),2,300.13,1001,6.0,0.5994005994005994
+Instance6,18,28,3,1512,2196.0,feasible (time limit reached),2,300.2,1950,246.0,12.615384615384615
+Instance8,30,28,4,3360,,no feasible solution found (time limit),0,300.63,1300,,
+Instance12,60,28,10,16800,,no feasible solution found (time limit),0,237.8,4040,,
